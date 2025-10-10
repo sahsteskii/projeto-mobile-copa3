@@ -13,11 +13,11 @@ export default function HomeScreen() {
       
       >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">seja bem vindo ao nossa viagem pela copa</ThemedText>
+        <ThemedText type="title">ola</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">ola 2</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
           Press{' '}

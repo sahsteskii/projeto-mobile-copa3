@@ -128,12 +128,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: '100%',
     maxWidth: 400,
-    shadowColor: '#fff',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.75,
     shadowRadius: 3.84,
     elevation: 5,
   },
@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#000',
+    color: '#fff',
     borderRadius: 10,
     padding: 15,
     marginBottom: 15,
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   loginButton: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#B8860B',
     borderRadius: 10,
     padding: 15,
     alignItems: 'center',
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   registerLink: {
-    color: '#007AFF',
+    color: '#B8860B',
     fontSize: 14,
     fontWeight: 'bold',
   },

@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     paddingTop:0,
     marginTop:0,
     height: '330%',
-    width: '100%'
+    width: '100%',
+    opacity: 0.5
   }
 });

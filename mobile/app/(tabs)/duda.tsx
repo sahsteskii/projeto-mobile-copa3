@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
 
   image: {
     height: '500%',
-    width: '100%'
+    width: '100%',
+    opacity: 0.5
   }
 });

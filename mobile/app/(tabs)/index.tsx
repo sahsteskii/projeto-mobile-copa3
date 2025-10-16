@@ -1,215 +1,98 @@
+import { Image } from 'expo-image';
+import { Platform, StyleSheet } from 'react-native';
+
+import { HelloWave } from '@/components/hello-wave';
+import ParallaxScrollView from '@/components/parallax-scroll-view';
+import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
-import { useState } from 'react';
-import { ImageBackground, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function HomeScreen() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    // Sua lógica de login aqui
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
-
   return (
-    <View style={styles.container}>
-      <ImageBackground 
-        source={require('@/assets/images/oii.png')}
-        resizeMode="cover" 
-        style={styles.image}
-      >
-        {/* Overlay escuro para melhor contraste */}
-        <View style={styles.overlay} />
-        
-        <KeyboardAvoidingView 
-          style={styles.loginContainer}
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        >
-          {/* Container do formulário de login */}
-          <View style={styles.loginBox}>
-            <Text style={styles.title}>Bem-vindo</Text>
-            <Text style={styles.subtitle}>Faça login para continuar</Text>
-            
-            {/* Campo Email */}
-            <TextInput
-              style={styles.input}
-              placeholder="Email"
-              placeholderTextColor="#999"
-              value={email}
-              onChangeText={setEmail}
-              keyboardType="email-address"
-              autoCapitalize="none"
+    <ParallaxScrollView
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerImage={
+        <Image
+          source={require('@/assets/images/partial-react-logo.png')}
+          style={styles.reactLogo}
+        />
+      }>
+      <ThemedView style={styles.titleContainer}>
+        <ThemedText type="title">Welcome!</ThemedText>
+        <HelloWave />
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText>
+          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
+          Press{' '}
+          <ThemedText type="defaultSemiBold">
+            {Platform.select({
+              ios: 'cmd + d',
+              android: 'cmd + m',
+              web: 'F12',
+            })}
+          </ThemedText>{' '}
+          to open developer tools.
+        </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <Link href="/modal">
+          <Link.Trigger>
+            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+          </Link.Trigger>
+          <Link.Preview />
+          <Link.Menu>
+            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
+            <Link.MenuAction
+              title="Share"
+              icon="square.and.arrow.up"
+              onPress={() => alert('Share pressed')}
             />
-            
-            {/* Campo Senha */}
-            <TextInput
-              style={styles.input}
-              placeholder="Senha"
-              placeholderTextColor="#999"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-            />
-            
-            {/* Botão de Login */}
-            <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-              <Text style={styles.loginButtonText}>Entrar</Text>
-            </TouchableOpacity>
-            
-            {/* Link para cadastro */}
-            <View style={styles.registerContainer}>
-              <Text style={styles.registerText}>Não tem conta? </Text>
-              <TouchableOpacity>
-                <Text style={styles.registerLink}>Cadastre-se</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </KeyboardAvoidingView>
-
-        {/* Seus componentes existentes - mantidos no lugar */}
-        <ThemedView style={styles.titleContainer}>
-          {/* Seu conteúdo existente */}
-        </ThemedView>
-        
-        <ThemedView style={styles.stepContainer}>
-          <Link href="/modal">
-            <Link.Trigger />
-            <Link.Preview />
-            <Link.Menu>
-              <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
+            <Link.Menu title="More" icon="ellipsis">
               <Link.MenuAction
-                title="Share"
-                icon="square.and.arrow.up"
-                onPress={() => alert('Share pressed')}
+                title="Delete"
+                icon="trash"
+                destructive
+                onPress={() => alert('Delete pressed')}
               />
-              <Link.Menu title="More" icon="ellipsis">
-                <Link.MenuAction
-                  title="Delete"
-                  icon="trash"
-                  destructive
-                  onPress={() => alert('Delete pressed')}
-                />
-              </Link.Menu>
             </Link.Menu>
-          </Link>
-        </ThemedView>
-        
-        <ThemedView style={styles.stepContainer}>
-          {/* Seu conteúdo existente */}
-        </ThemedView>
-      </ImageBackground>
-    </View>
+          </Link.Menu>
+        </Link>
+
+        <ThemedText>
+          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+        </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText>
+          {`When you're ready, run `}
+          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
+          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
+          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
+          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+        </ThemedText>
+      </ThemedView>
+    </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    width: '100%',
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.3)', // Overlay para melhor legibilidade
-  },
-  loginContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 30,
-  },
-  loginBox: {
-    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-    padding: 25,
-    borderRadius: 15,
-    width: '100%',
-    maxWidth: 400,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.75,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
-    textAlign: 'center',
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
-    textAlign: 'center',
-    marginBottom: 30,
-  },
-  input: {
-    backgroundColor: '#000',
-    color: '#fff',
-    borderRadius: 10,
-    padding: 15,
-    marginBottom: 15,
-    fontSize: 16,
-    borderWidth: 1,
-    borderColor: '#999',
-    shadowColor: '#999',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 1,
-    elevation: 2,
-  },
-  loginButton: {
-    backgroundColor: '#B8860B',
-    borderRadius: 10,
-    padding: 15,
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  loginButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  registerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  registerText: {
-    color: '#999',
-    fontSize: 14,
-  },
-  registerLink: {
-    color: '#B8860B',
-    fontSize: 14,
-    fontWeight: 'bold',
-  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    // Ajuste a posição se necessário
-    position: 'absolute',
-    top: 50,
-    left: 20,
   },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
-    // Ajuste a posição dos containers existentes
+  },
+  reactLogo: {
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
     position: 'absolute',
-    bottom: 20,
-    left: 20,
-    right: 20,
   },
 });

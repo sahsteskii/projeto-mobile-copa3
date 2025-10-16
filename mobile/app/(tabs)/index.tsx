@@ -87,16 +87,6 @@ const styles = StyleSheet.create({
   stepContainer: {
     gap: 8,
     marginBottom: 8,
-<<<<<<< HEAD
-  
-  },
-
-  image: {
-    height: '510%',
-    width: '100%'
-  }
-});
-=======
   },
   reactLogo: {
     height: 178,
@@ -106,4 +96,3 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
->>>>>>> 654e94378735642f6c4d2ebcb96fdfb44c3fdeda

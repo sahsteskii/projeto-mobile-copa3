@@ -2,13 +2,26 @@ import { ImageBackground, StyleSheet, View } from 'react-native';
 
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+import { ThemedText } from '@/components/themed-text';
 
 const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
 export default function HomeScreen() {
   return (
-    <View
     
+    <View
+      ><ThemedView style={styles.titleContainer}>
+      <ThemedText 
+        type="title"
+        style={styles.title}
       >
+       Convocados
+       Copa 2018
+      </ThemedText>
+    </ThemedView>
+    <head>
+      
+    </head>
+
         <ImageBackground  source={require('@/assets/images/oioi.webp')}
         resizeMode="cover" style={styles.image}>
 
@@ -25,7 +38,6 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-        
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -52,6 +64,7 @@ export default function HomeScreen() {
       
        
       </ThemedView>
+      
     </View>
   );
 }
@@ -61,6 +74,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    display:'flex',
+    justifyContent: 'center'
   },
   stepContainer: {
     gap: 8,
@@ -69,8 +84,15 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    height: '500%',
+    paddingTop:0,
+    marginTop:0,
+    height: '320%',
     width: '100%',
     opacity: 0.5
+  },
+  title: {
+    color: 'blue',
+    textAlign: 'center'
   }
-});
+})
+

@@ -12,11 +12,14 @@ export default function HomeScreen() {
       ><ThemedView style={styles.titleContainer}>
       <ThemedText 
         type="title"
-        style={{ color: 'green' }}
+        style={styles.title}
       >
         Copa 2010
       </ThemedText>
     </ThemedView>
+    <head>
+      
+    </head>
 
         <ImageBackground  source={require('@/assets/images/copaa.jpg')}
         resizeMode="cover" style={styles.image}>
@@ -70,6 +73,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    display:'flex',
+    justifyContent: 'center'
   },
   stepContainer: {
     gap: 8,
@@ -80,8 +85,12 @@ const styles = StyleSheet.create({
   image: {
     paddingTop:0,
     marginTop:0,
-    height: '330%',
-    width: '100%',
+    height: '325%',
+    width: '101%',
     opacity: 0.5
+  },
+  title: {
+    color: 'green',
+    textAlign: 'center'
   }
-});
+})

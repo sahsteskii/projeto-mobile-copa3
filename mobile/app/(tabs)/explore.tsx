@@ -1,112 +1,198 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
+import { Link, useRouter } from 'expo-router';
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function TabTwoScreen() {
+const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
+export default function HomeScreen() {
+  const router = useRouter();
+
+  const handlePlayerPress = (playerName: string) => {
+    router.push({
+      pathname: '/player-bio',
+      params: { player: playerName }
+    });
+  };
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
-          Explore
-        </ThemedText>
+    <View style={styles.container}>
+      <ImageBackground  
+        source={require('@/assets/images/mascotecopa.png')}
+        resizeMode="cover" 
+        style={styles.image}
+      >
+        <View style={styles.titleContainer}>
+          {/* Título Principal */}
+          <View style={styles.mainTitleContainer}>
+            <Text style={styles.mainTitle}>CONVOCADOS</Text>
+            <Text style={styles.subTitle}>COPA 2014</Text>
+          </View>
+          
+          {/* Container dos Botões dos Jogadores */}
+          <View style={styles.playersContainer}>
+            
+            {/* Primeira Linha */}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Neymar')}>
+                <Text style={styles.playerButtonText}>Neymar </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Thiago Silva')}>
+                <Text style={styles.playerButtonText}>Thiago Silva</Text>
+              </TouchableOpacity>
+            </View>
+            
+            {/* Segunda Linha */}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('David Luiz')}>
+                <Text style={styles.playerButtonText}>David Luiz</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Júlio César')}>
+                <Text style={styles.playerButtonText}>Júlio César</Text>
+              </TouchableOpacity>
+            </View>
+            
+            {/* Terceira Linha */}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Luiz Gustavo')}>
+                <Text style={styles.playerButtonText}>Luiz Gustavo</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Marcelo')}>
+                <Text style={styles.playerButtonText}>Marcelo</Text>
+              </TouchableOpacity>
+            </View>
+            
+            {/* Quarta Linha */}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Dani Alves')}>
+                <Text style={styles.playerButtonText}>Dani Alves</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Oscar')}>
+                <Text style={styles.playerButtonText}>Oscar</Text>
+              </TouchableOpacity>
+            </View>
+            
+            {/* Quinta Linha */}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Fred')}>
+                <Text style={styles.playerButtonText}>Fred </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Hulk')}>
+                <Text style={styles.playerButtonText}>Hulk </Text>
+              </TouchableOpacity>
+            </View>
+            
+            {/* Sexta Linha */}
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Fernandinho')}>
+                <Text style={styles.playerButtonText}>Fernandinho </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Willian')}>
+                <Text style={styles.playerButtonText}>Willian </Text>
+              </TouchableOpacity>
+            </View>
+            
+          </View>
+        </View>
+      </ImageBackground>
+    
+      {/* O resto do seu código continua igual */}
+      <ThemedView style={styles.stepContainer}>
+        <Link href="/modal">
+          <Link.Trigger />
+          <Link.Preview />
+          <Link.Menu>
+            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
+            <Link.MenuAction
+              title="Share"
+              icon="square.and.arrow.up"
+              onPress={() => alert('Share pressed')}
+            />
+            <Link.Menu title="More" icon="ellipsis">
+              <Link.MenuAction
+                title="Delete"
+                icon="trash"
+                destructive
+                onPress={() => alert('Delete pressed')}
+              />
+            </Link.Menu>
+          </Link.Menu>
+        </Link>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image
-          source={require('@/assets/images/react-logo.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            react-native-reanimated
-          </ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+      
+      <ThemedView style={styles.stepContainer}>
+      </ThemedView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: {
+    flex: 1,
   },
   titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+    alignItems: 'center',
+    marginTop: 40,
+    flex: 1,
   },
+  stepContainer: {
+    gap: 8,
+    marginBottom: 8,
+  },
+  image: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'flex-start',
+  },
+  mainTitleContainer: {
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  mainTitle: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: 'yellow',
+    textShadowColor: 'black',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 5,
+  },
+  subTitle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: 'yellow',
+    textShadowColor: 'black',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 5,
+    marginTop: -5,
+  },
+  playersContainer: {
+    width: '90%',
+    alignItems: 'center',
+    gap: 10,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    gap: 10,
+  },
+  playerButton: {
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: 'yellow',
+    flex: 1,
+    alignItems: 'center',
+    minHeight: 50,
+    justifyContent: 'center',
+  },
+  playerButtonText: {
+    color: 'yellow',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textShadowColor: 'black',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
+    textAlign: 'center',
+  }
 });

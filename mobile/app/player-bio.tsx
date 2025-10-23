@@ -3,64 +3,64 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 
 const playerBios: { [key: string]: { bio: string, position: string, club: string } } = {
   'Júlio César': {
-    position: 'Ponta direita',
-    club: 'Real Betis',
-    bio: 'Jovem destaque da Copa 2022, Antony encantou com sua ousadia e dribles desconcertantes. Trouxe energia renovada ao ataque brasileiro como uma das promessas da Seleção.'
+    position: 'Goleiro',
+    club: 'Internazionale (Itália)',
+    bio: 'Considerado na época um dos melhores goleiros do mundo. Tinha grande segurança entre as traves e foi peça fundamental no time defensivamente sólido de Dunga.'
   },
   'Lúcio': {
-    position: 'Meio-campista',
-    club: 'Fenerbahçe',
-    bio: 'Frederico Rodrigues,oi o motor do meio-campo brasileiro na Copa 2022. Com sua experiência e versatilidade, garantiu equilíbrio tático e foi essencial na recomposição defensiva da Seleção.'
+    position: 'Zagueiro - Capitão',
+    club: 'Internazionale (Itália)',
+    bio: 'Era o pilar defensivo da equipe. Formou uma dupla de zaga imbatível com Juan durante toda a campanha das eliminatórias e na Copa. Campeão da UEFA naquele ano com a Internazionale.'
   },
   'Maicon': {
-    position: 'Volante',
-    club: 'Al-Ittihad',
-    bio: 'Fabinho atuou como importante opção no setor defensivo do Brasil na Copa 2022. Sua experiência e capacidade de desarme foram cruciais para proteger a zaga e organizar as saídas de jogo.'
+    position: 'Lateral-Direito',
+    club: 'Internazionale (Itália)',
+    bio: 'Destaque do time e um dos melhores do mundo em sua posição. Ficou famoso naquele ano por marcar um gol antológico de fora da área contra a Coreia do Norte na fase de grupos.'
   },
   'Juan': {
-    position: 'Meio-campista',
-    club: 'West Ham United',
-    bio: 'Paquetá foi um dos grandes destaques do Brasil na Copa 2022, marcando gols decisivos. Sua classe e visão de jogo trouxeram criatividade ao meio-campo da Seleção.'
+    position: 'Zagueiro',
+    club: ' Roma (Itália)',
+    bio: 'A dupla de zaga com Lúcio era a base do time. Extremamente consistente e confiável, foi titular em todos os jogos da campanha.'
   },
   ' Michel Bastos': {
-    position: 'Atacante',
-    club: 'Barcelona',
-    bio: 'Raphinha foi titular na campanha brasileira da Copa 2022, atuando pela direita. Sua velocidade e cruzamentos precisos foram armas importantes no ataque da Seleção.'
+    position: 'Lateral-Esquerdo',
+    club: 'Lyon (França)',
+    bio: 'Foi a opção de Dunga para a lateral-esquerda. Tinha um potente chute de fora da área e boa capacidade de apoiar o ataque.'
   },
   'Felipe Melo': {
-    position: 'Atacante',
-    club: 'Arsenal',
-    bio: 'Gabriel Jesus chegou à Copa 2022 como uma das opções de ataque do Brasil. Apesar de lesão durante o torneio, sua experiência e movimentação eram trunfos importantes.'
+    position: 'Volante',
+    club: 'Juventus (Itália)',
+    bio: 'Sua participação foi decisiva, mas de forma negativa. Na derrota para a Holanda, foi ele quem marcou contra na própria baliza (decretando o gol da virada) e depois foi expulso, deixando o time com um a menos.'
   },
   'Kaká': {
-    position: 'Zagueiro',
-    club: 'Real Madrid',
-    bio: 'Militão foi peça fundamental na defesa brasileira durante a Copa 2022. Sua velocidade e segurança defensiva foram essenciais para a solidez zagueira da Seleção.'
+    position: 'Meia-Atacante',
+    club: ' Real Madrid (Espanha)',
+    bio: 'Era a grande estrela do time, porém chegou à Copa lesionado e não conseguiu mostrar seu melhor futebol. Foi o último a receber a bola antes do gol do Robinho contra a Coreia do Norte.'
   },
   'Robinho': {
     position: 'Atacante',
-    club: 'Al-Hilal',
-    bio: 'Neymar Jr é um dos maiores jogadores brasileiros da história. Conhecido por sua técnica excepcional, dribles e capacidade de decisão.'
+    club: 'Santos (Brasil)',
+    bio: 'Um dos mais animados da campanha. Marcou o primeiro gol do Brasil na Copa (contra a Coreia do Norte) e foi um dos principais responsáveis pela armação ofensiva.'
   },
   'Luis Fabiano': {
-    position: 'Meio-campista',
-    club: 'Newcastle United',
-    bio: 'Bruno Guimarães é um meio-campista brasileiro conhecido por sua qualidade no passe e visão de jogo.'
+    position: 'Atacante',
+    club: 'Sevilla (Espanha)',
+    bio: 'Artilheiro da equipe nas Eliminatórias. Marcou dois gols na vitória por 3-1 contra a Costa do Marfim, um deles após um controvérrio toque de mão não marcado.'
   },
   'Dani Alves': {
-    position: 'Atacante',
-    club: 'Tottenham',
-    bio: 'Richarlison é um atacante brasileiro que atua pelo Tottenham. Conhecido por sua garra e capacidade de finalização.'
+    position: 'Lateral / Meia',
+    club: 'Barcelona (Espanha)',
+    bio: 'Na época, era um dos melhores laterais do mundo, mas era reserva de Maicon. Entrou em campo principalmente como meia-direita durante o torneio.'
   },
   'Ramires': {
-    position: 'Atacante',
-    club: 'Real Madrid',
-    bio: 'Vinicius Junior é um ponta-esquerda brasileiro que atua pelo Real Madrid. Destaca-se por sua velocidade e habilidade no drible.'
+    position: 'Volante',
+    club: 'Benfica (Portugal)',
+    bio: 'Sua incansável capacidade de corrida e recuperação de bola lhe renderam a fama de "caçador de bolas", uma característica muito valorizada pelo técnico Dunga.'
   },
   'Júlio Baptista': {
-    position: 'Zagueiro',
-    club: 'Paris Saint-Germain',
-    bio: 'Marquinhos é um zagueiro brasileiro e capitão do PSG. Conhecido por sua liderança e qualidade técnica.'
+    position: 'Meia-Atacante',
+    club: 'Roma (Itália)',
+    bio: 'Conhecido pelo apelido de "A Fera", Julio Baptista era um jogador robusto e de bom chute, mas que, naquela Copa, não conseguiu ter o mesmo impacto que teve em outras convocações, ficando um pouco à sombra de Kaká.'
   },
 };
 

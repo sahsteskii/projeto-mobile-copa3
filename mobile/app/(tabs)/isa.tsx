@@ -32,7 +32,7 @@ export default function HomeScreen() {
             
             {/* Primeira Linha */}
             <View style={styles.buttonRow}>
-              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Antony')}>oii
+              <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Antony')}>
                 <Text style={styles.playerButtonText}>Antony</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.playerButton} onPress={() => handlePlayerPress('Fred')}>

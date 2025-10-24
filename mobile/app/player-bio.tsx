@@ -2,6 +2,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const playerBios: { [key: string]: { bio: string, position: string, club: string } } = {
+<<<<<<< HEAD
   'Neymar': {
     position: 'Atacante',
     club: 'Barcelona (ESP)',
@@ -26,9 +27,31 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
     position: 'Volante',
     club: 'VfL Wolfsburg (ALE)',
     bio: 'Volante essencial na contenção. Sua ausência contra a Alemanha foi crucial.'
+=======
+  'Júlio César': {
+    position: 'Goleiro',
+    club: 'Internazionale (Itália)',
+    bio: 'Considerado na época um dos melhores goleiros do mundo. Tinha grande segurança entre as traves e foi peça fundamental no time defensivamente sólido de Dunga.'
   },
-  'Marcelo': {
+  'Lúcio': {
+    position: 'Zagueiro - Capitão',
+    club: 'Internazionale (Itália)',
+    bio: 'Era o pilar defensivo da equipe. Formou uma dupla de zaga imbatível com Juan durante toda a campanha das eliminatórias e na Copa. Campeão da UEFA naquele ano com a Internazionale.'
+>>>>>>> f468ed8f40b2cf58a18e605f03633f991d97600b
+  },
+  'Maicon': {
+    position: 'Lateral-Direito',
+    club: 'Internazionale (Itália)',
+    bio: 'Destaque do time e um dos melhores do mundo em sua posição. Ficou famoso naquele ano por marcar um gol antológico de fora da área contra a Coreia do Norte na fase de grupos.'
+  },
+  'Juan': {
+    position: 'Zagueiro',
+    club: ' Roma (Itália)',
+    bio: 'A dupla de zaga com Lúcio era a base do time. Extremamente consistente e confiável, foi titular em todos os jogos da campanha.'
+  },
+  ' Michel Bastos': {
     position: 'Lateral-Esquerdo',
+<<<<<<< HEAD
     club: 'Real Madrid (ESP)',
     bio: 'Lateral ofensivo, mas com dificuldades defensivas.'
   },
@@ -61,6 +84,45 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
     position: 'Meia',
     club: 'Chelsea (ING)',
     bio: 'Opção rápida e técnica, mas subaproveitado durante o torneio.'
+=======
+    club: 'Lyon (França)',
+    bio: 'Foi a opção de Dunga para a lateral-esquerda. Tinha um potente chute de fora da área e boa capacidade de apoiar o ataque.'
+  },
+  'Felipe Melo': {
+    position: 'Volante',
+    club: 'Juventus (Itália)',
+    bio: 'Sua participação foi decisiva, mas de forma negativa. Na derrota para a Holanda, foi ele quem marcou contra na própria baliza (decretando o gol da virada) e depois foi expulso, deixando o time com um a menos.'
+  },
+  'Kaká': {
+    position: 'Meia-Atacante',
+    club: ' Real Madrid (Espanha)',
+    bio: 'Era a grande estrela do time, porém chegou à Copa lesionado e não conseguiu mostrar seu melhor futebol. Foi o último a receber a bola antes do gol do Robinho contra a Coreia do Norte.'
+  },
+  'Robinho': {
+    position: 'Atacante',
+    club: 'Santos (Brasil)',
+    bio: 'Um dos mais animados da campanha. Marcou o primeiro gol do Brasil na Copa (contra a Coreia do Norte) e foi um dos principais responsáveis pela armação ofensiva.'
+  },
+  'Luis Fabiano': {
+    position: 'Atacante',
+    club: 'Sevilla (Espanha)',
+    bio: 'Artilheiro da equipe nas Eliminatórias. Marcou dois gols na vitória por 3-1 contra a Costa do Marfim, um deles após um controvérrio toque de mão não marcado.'
+  },
+  'Dani Alves': {
+    position: 'Lateral / Meia',
+    club: 'Barcelona (Espanha)',
+    bio: 'Na época, era um dos melhores laterais do mundo, mas era reserva de Maicon. Entrou em campo principalmente como meia-direita durante o torneio.'
+  },
+  'Ramires': {
+    position: 'Volante',
+    club: 'Benfica (Portugal)',
+    bio: 'Sua incansável capacidade de corrida e recuperação de bola lhe renderam a fama de "caçador de bolas", uma característica muito valorizada pelo técnico Dunga.'
+  },
+  'Júlio Baptista': {
+    position: 'Meia-Atacante',
+    club: 'Roma (Itália)',
+    bio: 'Conhecido pelo apelido de "A Fera", Julio Baptista era um jogador robusto e de bom chute, mas que, naquela Copa, não conseguiu ter o mesmo impacto que teve em outras convocações, ficando um pouco à sombra de Kaká.'
+>>>>>>> f468ed8f40b2cf58a18e605f03633f991d97600b
   },
 };
 

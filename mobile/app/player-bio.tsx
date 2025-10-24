@@ -1,113 +1,85 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 
-const playerBios: { [key: string]: { bio: string, position: string, club: string } } = {
-  'Neymar': {
-    position: 'Atacante',
-    club: 'Barcelona (ESP)',
-    bio: 'Estrela da equipe. Carregou o time até se lesionar contra a Colômbia, abalando toda a estrutura ofensiva.'
-  },
-  'Thiago Silva': {
-    position: 'Zagueiro / Capitão',
-    club: 'Paris Saint-Germain - PSG (FRA)',
-    bio: 'Zagueiro sólido e capitão. Sua suspensão na semifinal fragilizou gravemente a defesa.'
-  },
-  'David Luiz': {
-    position: 'Zagueiro',
-    club: 'Chelsea (ING) / Paris Saint-Germain - PSG (FRA)',
-    bio: 'Líder emotivo, fez gol importante, mas a defesa mostrou falhas coletivas.'
-  },
-  'Júlio César': {
-    position: 'Goleiro',
-    club: 'Queens Park Rangers - QPR (ING) / Toronto FC (CAN)',
-    bio: 'Goleiro seguro. Decisivo nos pênaltis contra o Chile.'
-  },
-  'Luiz Gustavo': {
-    position: 'Volante',
-    club: 'VfL Wolfsburg (ALE)',
-    bio: 'Volante essencial na contenção. Sua ausência contra a Alemanha foi crucial.'
-  },
-
-  'Lúcio': {
-    position: 'Zagueiro - Capitão',
-    club: 'Internazionale (Itália)',
-    bio: 'Era o pilar defensivo da equipe. Formou uma dupla de zaga imbatível com Juan durante toda a campanha das eliminatórias e na Copa. Campeão da UEFA naquele ano com a Internazionale.'
-  },
-  'Maicon': {
-    position: 'Lateral-Direito',
-    club: 'Internazionale (Itália)',
-    bio: 'Destaque do time e um dos melhores do mundo em sua posição. Ficou famoso naquele ano por marcar um gol antológico de fora da área contra a Coreia do Norte na fase de grupos.'
-  },
-  'Juan': {
-    position: 'Zagueiro',
-    club: ' Roma (Itália)',
-    bio: 'A dupla de zaga com Lúcio era a base do time. Extremamente consistente e confiável, foi titular em todos os jogos da campanha.'
-  },
-  ' Michel Bastos': {
-    position: 'Lateral-Esquerdo',
-    club: 'Real Madrid (ESP)',
-    bio: 'Lateral ofensivo, mas com dificuldades defensivas.'
-  },
-  'Dani Alves': {
-    position: 'Lateral-Direito',
-    club: 'Barcelona (ESP)',
-    bio: 'Atuação abaixo do esperado, sem seu habitual impacto.'
-  },
-  'Oscar ': {
-    position: 'Meia',
-    club: 'Chelsea (ING)',
-    bio: 'Meia com grande entrega e um dos poucos a sair com créditos.'
+const playerBios: { 
+  [key: string]: { 
+    bio: string, 
+    position: string, 
+    club: string,
+    image: any 
+  } 
+} = {
+  'Antony': {
+    position: 'Ponta direita',
+    club: 'Real Betis',
+    image: require('@/assets/images/antony22.jpg'),
+    bio: 'Jovem destaque da Copa 2022, Antony encantou com sua ousadia e dribles desconcertantes. Trouxe energia renovada ao ataque brasileiro como uma das promessas da Seleção.'
   },
   'Fred': {
-    position: 'Atacante',
-    club: 'Fluminense (BRA)',
-    bio: 'Centroavante muito criticado, sem gols e pouca participação.'
+    position: 'Meio-campista',
+    club: 'Fenerbahçe',
+    image: require('@/assets/images/fred2.png'),
+    bio: 'Frederico Rodrigues, o motor do meio-campo brasileiro na Copa 2022. Com sua experiência e versatilidade, garantiu equilíbrio tático e foi essencial na recomposição defensiva da Seleção.'
   },
-  'Hulk': {
-    position: 'Atacante',
-    club: 'Zenit St. Petersburg (RUS)',
-    bio: 'Pouca eficiência, não correspondeu em momentos decisivos.'
-  },
-  'Fernandinho ': {
+  'Fabinho': {
     position: 'Volante',
-    club: 'Manchester City (ING)',
-    bio: 'Pouco utilizado. Entrou na semifinal com o jogo já perdido.'
+    club: 'Al-Ittihad',
+    image: require('@/assets/images/Fabinho.jpg'),
+    bio: 'Fabinho atuou como importante opção no setor defensivo do Brasil na Copa 2022. Sua experiência e capacidade de desarme foram cruciais para proteger a zaga e organizar as saídas de jogo.'
   },
-  'Willian': {
-    position: 'Meia',
-    club: 'Chelsea (ING)',
-    bio: 'Opção rápida e técnica, mas subaproveitado durante o torneio.'
-   },
-  'Felipe Melo': {
-    position: 'Volante',
-    club: 'Juventus (Itália)',
-    bio: 'Sua participação foi decisiva, mas de forma negativa. Na derrota para a Holanda, foi ele quem marcou contra na própria baliza (decretando o gol da virada) e depois foi expulso, deixando o time com um a menos.'
+  'Lucas Paqueta': {
+    position: 'Meio-campista',
+    club: 'West Ham United',
+    image: require('@/assets/images/paqueta.webp'),
+    bio: 'Paquetá foi um dos grandes destaques do Brasil na Copa 2022, marcando gols decisivos. Sua classe e visão de jogo trouxeram criatividade ao meio-campo da Seleção.'
   },
-  'Kaká': {
-    position: 'Meia-Atacante',
-    club: ' Real Madrid (Espanha)',
-    bio: 'Era a grande estrela do time, porém chegou à Copa lesionado e não conseguiu mostrar seu melhor futebol. Foi o último a receber a bola antes do gol do Robinho contra a Coreia do Norte.'
-  },
-  'Robinho': {
+  'Raphinha': {
     position: 'Atacante',
-    club: 'Santos (Brasil)',
-    bio: 'Um dos mais animados da campanha. Marcou o primeiro gol do Brasil na Copa (contra a Coreia do Norte) e foi um dos principais responsáveis pela armação ofensiva.'
+    club: 'Barcelona',
+    image: require('@/assets/images/raphinha.webp'),
+    bio: 'Raphinha foi titular na campanha brasileira da Copa 2022, atuando pela direita. Sua velocidade e cruzamentos precisos foram armas importantes no ataque da Seleção.'
   },
-  'Luis Fabiano': {
+  'Gabriel Jesus': {
     position: 'Atacante',
-    club: 'Sevilla (Espanha)',
-    bio: 'Artilheiro da equipe nas Eliminatórias. Marcou dois gols na vitória por 3-1 contra a Costa do Marfim, um deles após um controvérrio toque de mão não marcado.'
+    club: 'Arsenal',
+    image: require('@/assets/images/gabriel2.jpg'),
+    bio: 'Gabriel Jesus chegou à Copa 2022 como uma das opções de ataque do Brasil. Apesar de lesão durante o torneio, sua experiência e movimentação eram trunfos importantes.'
   },
-
-  'Ramires': {
-    position: 'Volante',
-    club: 'Benfica (Portugal)',
-    bio: 'Sua incansável capacidade de corrida e recuperação de bola lhe renderam a fama de "caçador de bolas", uma característica muito valorizada pelo técnico Dunga.'
+  'Éder Militão': {
+    position: 'Zagueiro',
+    club: 'Real Madrid',
+    image: require('@/assets/images/eder.jpg'),
+    bio: 'Militão foi peça fundamental na defesa brasileira durante a Copa 2022. Sua velocidade e segurança defensiva foram essenciais para a solidez zagueira da Seleção.'
   },
-  'Júlio Baptista': {
-    position: 'Meia-Atacante',
-    club: 'Roma (Itália)',
-    bio: 'Conhecido pelo apelido de "A Fera", Julio Baptista era um jogador robusto e de bom chute, mas que, naquela Copa, não conseguiu ter o mesmo impacto que teve em outras convocações, ficando um pouco à sombra de Kaká.'
+  'Neymar': {
+    position: 'Atacante',
+    club: 'Al-Hilal',
+    image: require('@/assets/images/ney22.jpg'),
+    bio: 'Neymar Jr é um dos maiores jogadores brasileiros da história. Conhecido por sua técnica excepcional, dribles e capacidade de decisão.'
+  },
+  'Bruno Guimarães': {
+    position: 'Meio-campista',
+    club: 'Newcastle United',
+    image: require('@/assets/images/bruno.jpg'),
+    bio: 'Bruno Guimarães é um meio-campista brasileiro conhecido por sua qualidade no passe e visão de jogo.'
+  },
+  'Richarlison': {
+    position: 'Atacante',
+    club: 'Tottenham',
+    image: require('@/assets/images/richarlison.jpg'),
+    bio: 'Richarlison é um atacante brasileiro que atua pelo Tottenham. Conhecido por sua garra e capacidade de finalização.'
+  },
+  'Vinicius Jr': {
+    position: 'Atacante',
+    club: 'Real Madrid',
+    image: require('@/assets/images/vini.jpg'),
+    bio: 'Vinicius Junior é um ponta-esquerda brasileiro que atua pelo Real Madrid. Destaca-se por sua velocidade e habilidade no drible.'
+  },
+  'Marquinhos': {
+    position: 'Zagueiro',
+    club: 'Paris Saint-Germain',
+    image: require('@/assets/images/marquihos.jpg'),
+    bio: 'Marquinhos é um zagueiro brasileiro e capitão do PSG. Conhecido por sua liderança e qualidade técnica.'
   },
 };
 
@@ -119,7 +91,8 @@ export default function PlayerBio() {
   const playerData = playerBios[playerName] || { 
     bio: 'Biografia não disponível.', 
     position: 'Posição não informada',
-    club: 'Clube não informado'
+    club: 'Clube não informado',
+    image: require('@/assets/images/icon.png')
   };
 
   return (
@@ -131,12 +104,23 @@ export default function PlayerBio() {
         <Text style={styles.backButtonText}>← Voltar</Text>
       </TouchableOpacity>
       
-      <ScrollView style={styles.content}>
-        <Text style={styles.playerName}>{playerName}</Text>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+        <View style={styles.headerContainer}>
+          <Image 
+            source={playerData.image} 
+            style={styles.playerImage}
+            resizeMode="cover"
+          />
+          <Text style={styles.playerName}>{playerName}</Text>
+        </View>
         
         <View style={styles.infoContainer}>
-          <Text style={styles.infoText}><Text style={styles.label}>Posição:</Text> {playerData.position}</Text>
-          <Text style={styles.infoText}><Text style={styles.label}>Clube:</Text> {playerData.club}</Text>
+          <Text style={styles.infoText}>
+            <Text style={styles.label}>Posição:</Text> {playerData.position}
+          </Text>
+          <Text style={styles.infoText}>
+            <Text style={styles.label}>Clube:</Text> {playerData.club}
+          </Text>
         </View>
         
         <Text style={styles.bioTitle}>Biografia</Text>
@@ -149,7 +133,7 @@ export default function PlayerBio() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#81d3eaff', // Verde bem claro e suave
     padding: 20,
   },
   backButton: {
@@ -167,12 +151,24 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
   },
+  headerContainer: {
+    alignItems: 'center',
+    marginBottom: 25,
+  },
+  playerImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    marginBottom: 15,
+    borderWidth: 3,
+    borderColor: 'yellow',
+    backgroundColor: '#ddd',
+  },
   playerName: {
     fontSize: 32,
     fontWeight: 'bold',
-    marginBottom: 20,
+    color: '#2d5a2d', // Verde escuro para contraste
     textAlign: 'center',
-    color: '#333',
   },
   infoContainer: {
     backgroundColor: 'white',
@@ -192,13 +188,13 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
-    color: '#666',
+    color: '#2d5a2d', // Verde escuro para as labels
   },
   bioTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#333',
+    color: '#2d5a2d', // Verde escuro para o título
   },
   bioText: {
     fontSize: 16,

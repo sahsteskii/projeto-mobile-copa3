@@ -8,7 +8,7 @@ export default function HomeScreen() {
 
   const handlePlayerPress = (playerName: string) => {
     router.push({
-      pathname: '/player-bio',
+      pathname: '/Copa 2010',
       params: { player: playerName }
     });
   };

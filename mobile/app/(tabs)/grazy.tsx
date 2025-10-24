@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+import { ThemedText } from '@/components/themed-text';
 
 // Dados das copas para os cards
 const copaData = [
@@ -56,12 +57,12 @@ export default function IntroducaoScreen() {
         resizeMode="cover" 
         style={styles.backgroundImage}
       >
-        
-        <ThemedView style={styles.header}>
+        <View style={styles.containerbox}>
+        <ThemedText style={styles.header}>
           <Text style={styles.title}>Álbum da Copa</Text>
-          <Text style={styles.subtitle}>Selecione uma edição</Text>
-        </ThemedView>
-
+          
+        </ThemedText>
+        </View>
         <ScrollView 
           style={styles.scrollView}
           contentContainerStyle={styles.scrollContent}
@@ -103,14 +104,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  containerbox:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'center'
+  },
   backgroundImage: {
     flex: 1,
     width: '100%',
   },
   header: {
-    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent:'center',
     paddingVertical: 30,
-    paddingHorizontal: 20,
   },
   title: {
     fontSize: 32,

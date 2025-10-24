@@ -2,7 +2,6 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const playerBios: { [key: string]: { bio: string, position: string, club: string } } = {
-<<<<<<< HEAD
   'Neymar': {
     position: 'Atacante',
     club: 'Barcelona (ESP)',
@@ -27,17 +26,12 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
     position: 'Volante',
     club: 'VfL Wolfsburg (ALE)',
     bio: 'Volante essencial na contenção. Sua ausência contra a Alemanha foi crucial.'
-=======
-  'Júlio César': {
-    position: 'Goleiro',
-    club: 'Internazionale (Itália)',
-    bio: 'Considerado na época um dos melhores goleiros do mundo. Tinha grande segurança entre as traves e foi peça fundamental no time defensivamente sólido de Dunga.'
   },
+
   'Lúcio': {
     position: 'Zagueiro - Capitão',
     club: 'Internazionale (Itália)',
     bio: 'Era o pilar defensivo da equipe. Formou uma dupla de zaga imbatível com Juan durante toda a campanha das eliminatórias e na Copa. Campeão da UEFA naquele ano com a Internazionale.'
->>>>>>> f468ed8f40b2cf58a18e605f03633f991d97600b
   },
   'Maicon': {
     position: 'Lateral-Direito',
@@ -51,7 +45,6 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
   },
   ' Michel Bastos': {
     position: 'Lateral-Esquerdo',
-<<<<<<< HEAD
     club: 'Real Madrid (ESP)',
     bio: 'Lateral ofensivo, mas com dificuldades defensivas.'
   },
@@ -84,10 +77,7 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
     position: 'Meia',
     club: 'Chelsea (ING)',
     bio: 'Opção rápida e técnica, mas subaproveitado durante o torneio.'
-=======
-    club: 'Lyon (França)',
-    bio: 'Foi a opção de Dunga para a lateral-esquerda. Tinha um potente chute de fora da área e boa capacidade de apoiar o ataque.'
-  },
+   },
   'Felipe Melo': {
     position: 'Volante',
     club: 'Juventus (Itália)',
@@ -108,11 +98,7 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
     club: 'Sevilla (Espanha)',
     bio: 'Artilheiro da equipe nas Eliminatórias. Marcou dois gols na vitória por 3-1 contra a Costa do Marfim, um deles após um controvérrio toque de mão não marcado.'
   },
-  'Dani Alves': {
-    position: 'Lateral / Meia',
-    club: 'Barcelona (Espanha)',
-    bio: 'Na época, era um dos melhores laterais do mundo, mas era reserva de Maicon. Entrou em campo principalmente como meia-direita durante o torneio.'
-  },
+
   'Ramires': {
     position: 'Volante',
     club: 'Benfica (Portugal)',
@@ -122,7 +108,6 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
     position: 'Meia-Atacante',
     club: 'Roma (Itália)',
     bio: 'Conhecido pelo apelido de "A Fera", Julio Baptista era um jogador robusto e de bom chute, mas que, naquela Copa, não conseguiu ter o mesmo impacto que teve em outras convocações, ficando um pouco à sombra de Kaká.'
->>>>>>> f468ed8f40b2cf58a18e605f03633f991d97600b
   },
 };
 

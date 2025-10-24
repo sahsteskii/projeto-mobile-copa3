@@ -16,7 +16,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <ImageBackground  
-        source={require('@/assets/images/mascotecopa.png')}
+        source={require('@/assets/images/copa4.webp')}
         resizeMode="cover" 
         style={styles.image}
       >
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: '100%',
+    height: '100%',
     justifyContent: 'flex-start',
   },
   mainTitleContainer: {

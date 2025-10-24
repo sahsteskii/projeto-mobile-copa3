@@ -5,62 +5,62 @@ const playerBios: { [key: string]: { bio: string, position: string, club: string
   'Neymar': {
     position: 'Atacante',
     club: 'Barcelona (ESP)',
-    bio: 'Jovem destaque da Copa 2022, Antony encantou com sua ousadia e dribles desconcertantes. Trouxe energia renovada ao ataque brasileiro como uma das promessas da Seleção.'
+    bio: 'Estrela da equipe. Carregou o time até se lesionar contra a Colômbia, abalando toda a estrutura ofensiva.'
   },
   'Thiago Silva': {
     position: 'Zagueiro / Capitão',
     club: 'Paris Saint-Germain - PSG (FRA)',
-    bio: 'Frederico Rodrigues,oi o motor do meio-campo brasileiro na Copa 2022. Com sua experiência e versatilidade, garantiu equilíbrio tático e foi essencial na recomposição defensiva da Seleção.'
+    bio: 'Zagueiro sólido e capitão. Sua suspensão na semifinal fragilizou gravemente a defesa.'
   },
   'David Luiz': {
     position: 'Zagueiro',
     club: 'Chelsea (ING) / Paris Saint-Germain - PSG (FRA)',
-    bio: 'Fabinho atuou como importante opção no setor defensivo do Brasil na Copa 2022. Sua experiência e capacidade de desarme foram cruciais para proteger a zaga e organizar as saídas de jogo.'
+    bio: 'Líder emotivo, fez gol importante, mas a defesa mostrou falhas coletivas.'
   },
   'Júlio César': {
     position: 'Goleiro',
     club: 'Queens Park Rangers - QPR (ING) / Toronto FC (CAN)',
-    bio: 'Paquetá foi um dos grandes destaques do Brasil na Copa 2022, marcando gols decisivos. Sua classe e visão de jogo trouxeram criatividade ao meio-campo da Seleção.'
+    bio: 'Goleiro seguro. Decisivo nos pênaltis contra o Chile.'
   },
   'Luiz Gustavo': {
     position: 'Volante',
     club: 'VfL Wolfsburg (ALE)',
-    bio: 'Raphinha foi titular na campanha brasileira da Copa 2022, atuando pela direita. Sua velocidade e cruzamentos precisos foram armas importantes no ataque da Seleção.'
+    bio: 'Volante essencial na contenção. Sua ausência contra a Alemanha foi crucial.'
   },
   'Marcelo': {
     position: 'Lateral-Esquerdo',
     club: 'Real Madrid (ESP)',
-    bio: 'Gabriel Jesus chegou à Copa 2022 como uma das opções de ataque do Brasil. Apesar de lesão durante o torneio, sua experiência e movimentação eram trunfos importantes.'
+    bio: 'Lateral ofensivo, mas com dificuldades defensivas.'
   },
   'Dani Alves': {
     position: 'Lateral-Direito',
     club: 'Barcelona (ESP)',
-    bio: 'Militão foi peça fundamental na defesa brasileira durante a Copa 2022. Sua velocidade e segurança defensiva foram essenciais para a solidez zagueira da Seleção.'
+    bio: 'Atuação abaixo do esperado, sem seu habitual impacto.'
   },
   'Oscar ': {
     position: 'Meia',
     club: 'Chelsea (ING)',
-    bio: 'Neymar Jr é um dos maiores jogadores brasileiros da história. Conhecido por sua técnica excepcional, dribles e capacidade de decisão.'
+    bio: 'Meia com grande entrega e um dos poucos a sair com créditos.'
   },
   'Fred': {
     position: 'Atacante',
     club: 'Fluminense (BRA)',
-    bio: 'Bruno Guimarães é um meio-campista brasileiro conhecido por sua qualidade no passe e visão de jogo.'
+    bio: 'Centroavante muito criticado, sem gols e pouca participação.'
   },
-  'Hulk ': {
+  'Hulk': {
     position: 'Atacante',
-    club: ' Zenit St. Petersburg (RUS)',
-    bio: 'Richarlison é um atacante brasileiro que atua pelo Tottenham. Conhecido por sua garra e capacidade de finalização.'
+    club: 'Zenit St. Petersburg (RUS)',
+    bio: 'Pouca eficiência, não correspondeu em momentos decisivos.'
   },
   'Fernandinho ': {
     position: 'Volante',
     club: 'Manchester City (ING)',
-    bio: 'Vinicius Junior é um ponta-esquerda brasileiro que atua pelo Real Madrid. Destaca-se por sua velocidade e habilidade no drible.'
+    bio: 'Pouco utilizado. Entrou na semifinal com o jogo já perdido.'
   },
   'Willian': {
     position: 'Meia',
     club: 'Chelsea (ING)',
-    bio: 'Marquinhos é um zagueiro brasileiro e capitão do PSG. Conhecido por sua liderança e qualidade técnica.'
+    bio: 'Opção rápida e técnica, mas subaproveitado durante o torneio.'
   },
 };
 

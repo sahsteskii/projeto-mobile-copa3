@@ -10,7 +10,7 @@ import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 import { ThemedText } from '@/components/themed-text';
 
-// Dados das copas para os cards
+
 const copaData = [
   {
     year: '1930',

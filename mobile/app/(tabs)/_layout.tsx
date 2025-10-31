@@ -18,7 +18,7 @@ export default function TabLayout() {
         tabBarButton: HapticTab,
       }}>
       <Tabs.Screen
-        name="explore"
+        name="index"
         options={{
           title: 'Login',
           tabBarIcon: ({ color }) => <Entypo name="login" size={24} color="white" />,
@@ -28,23 +28,37 @@ export default function TabLayout() {
         name="grazy"
         options={{
           title: 'Introduçao',
-          tabBarIcon: ({ color }) => <Ionicons name="football" size={24} color="white" />,
+          tabBarIcon: ({ color }) => <Entypo name="pencil" size={24} color="white" />,
         }}
       />
       <Tabs.Screen
         name="yasmin"
         options={{
           title: '2010',
-          tabBarIcon: ({ color }) => <Ionicons name="football" size={24} color="black" />,
+          tabBarIcon: ({ color }) => <Ionicons name="football" size={24} color="white" />,
         }}
       />
       <Tabs.Screen
-        name="sasa"
+        name="explore"
         options={{
           title: '2014',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="football" size={24} color="white" />,
         }}
       />
+      <Tabs.Screen
+        name="duda"
+        options={{
+          title: '2018',
+          tabBarIcon: ({ color }) =><Ionicons name="football" size={24} color="white" />,
+        }}
+        />
+        <Tabs.Screen
+        name="isa"
+        options={{
+          title: '2022',
+          tabBarIcon: ({ color }) =><Ionicons name="football" size={24} color="white" />,
+        }}
+        />
     </Tabs>
   );
 }

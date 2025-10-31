@@ -17,18 +17,18 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
       }}>
+        <Tabs.Screen
+          name="grazy"
+          options={{
+            title: 'Introduçao',
+            tabBarIcon: ({ color }) => <Entypo name="pencil" size={24} color="white" />,
+          }}
+        />
       <Tabs.Screen
         name="index"
         options={{
           title: 'Login',
           tabBarIcon: ({ color }) => <Entypo name="login" size={24} color="white" />,
-        }}
-      />
-      <Tabs.Screen
-        name="grazy"
-        options={{
-          title: 'Introduçao',
-          tabBarIcon: ({ color }) => <Entypo name="pencil" size={24} color="white" />,
         }}
       />
       <Tabs.Screen

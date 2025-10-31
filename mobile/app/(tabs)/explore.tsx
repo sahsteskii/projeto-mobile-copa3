@@ -94,7 +94,7 @@ export default function HomeScreen() {
         </View>
       </ImageBackground>
     
-      {/* O resto do seu código continua igual */}
+
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger />
